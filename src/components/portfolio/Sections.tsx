@@ -13,7 +13,7 @@ import {
 export function About() {
   return (
     <section id="about" className="relative py-20 sm:py-28">
-      <div className="mx-auto max-w-6xl px-4">
+      <div className="mx-auto max-w-6xl px-5 sm:px-6">
         <SectionHeader eyebrow="About Me" title="Engineer. Builder. Learner." />
         <div className="grid gap-8 lg:grid-cols-3">
           <Reveal className="lg:col-span-2">
@@ -107,7 +107,7 @@ function StatCard({ value, suffix, label, delay }: { value: number; suffix: stri
 export function Skills() {
   return (
     <section id="skills" className="relative py-20 sm:py-28">
-      <div className="mx-auto max-w-6xl px-4">
+      <div className="mx-auto max-w-6xl px-5 sm:px-6">
         <SectionHeader eyebrow="Skills" title="Tools of the trade" description="A modern stack across AI, testing, security and the web." />
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {SKILL_GROUPS.map((g, i) => (
@@ -140,7 +140,7 @@ export function Skills() {
 export function Timeline() {
   return (
     <section id="timeline" className="relative py-20 sm:py-28">
-      <div className="mx-auto max-w-4xl px-4">
+      <div className="mx-auto max-w-4xl px-5 sm:px-6">
         <SectionHeader eyebrow="Journey" title="A timeline of growth" />
         <div className="relative">
           <div className="absolute left-4 top-0 h-full w-px bg-gradient-to-b from-primary/60 via-secondary/60 to-accent/60 md:left-1/2" />
@@ -168,7 +168,7 @@ export function Timeline() {
 export function Experience() {
   return (
     <section id="experience" className="relative py-20 sm:py-28">
-      <div className="mx-auto max-w-6xl px-4">
+      <div className="mx-auto max-w-6xl px-5 sm:px-6">
         <SectionHeader eyebrow="Experience" title="Where I've contributed" />
         <div className="grid gap-6 md:grid-cols-2">
           {EXPERIENCE.map((e, i) => (
@@ -205,29 +205,32 @@ export function Projects() {
   const visible = PROJECTS.filter((p) => filter === "All" || p.tags.includes(filter));
 
   return (
-    <section id="projects" className="relative py-20 sm:py-28">
-      <div className="mx-auto max-w-6xl px-4">
+    <section id="projects" aria-label="Projects" className="relative py-20 sm:py-28">
+      <div className="mx-auto max-w-6xl px-5 sm:px-6">
         <SectionHeader eyebrow="Projects" title="Selected work" description="A snapshot of things I've built and shipped." />
-        <div className="mb-8 flex flex-wrap justify-center gap-2">
+        <div className="mb-10 -mx-5 flex gap-2 overflow-x-auto px-5 sm:mx-0 sm:flex-wrap sm:justify-center sm:overflow-visible sm:px-0" role="tablist" aria-label="Filter projects by technology">
           {tags.slice(0, 10).map((t) => (
             <button
               key={t}
+              role="tab"
+              aria-selected={filter === t}
               onClick={() => setFilter(t)}
-              className={`rounded-full px-3 py-1 text-xs transition-all ${filter === t ? "gradient-brand text-white glow-primary" : "glass text-muted-foreground hover:text-white"}`}
+              className={`shrink-0 rounded-full px-3 py-1.5 text-xs transition-all ${filter === t ? "gradient-brand text-white glow-primary" : "glass text-muted-foreground hover:text-white"}`}
             >
               {t}
             </button>
           ))}
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {visible.map((p, i) => <ProjectCard key={p.title} project={p} delay={i * 0.06} />)}
+          {visible.map((p, i) => <ProjectCard key={p.title} project={p} index={i} delay={i * 0.06} />)}
         </div>
       </div>
     </section>
   );
 }
 
-function ProjectCard({ project, delay }: { project: typeof PROJECTS[number]; delay: number }) {
+function ProjectCard({ project, index, delay }: { project: typeof PROJECTS[number]; index: number; delay: number }) {
+
   const ref = useRef<HTMLDivElement>(null);
 
   const onMove = (e: React.MouseEvent) => {
@@ -280,7 +283,7 @@ function ProjectCard({ project, delay }: { project: typeof PROJECTS[number]; del
 export function Achievements() {
   return (
     <section id="achievements" className="relative py-20 sm:py-28">
-      <div className="mx-auto max-w-5xl px-4">
+      <div className="mx-auto max-w-5xl px-5 sm:px-6">
         <SectionHeader eyebrow="Achievements" title="Milestones & recognition" />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {ACHIEVEMENTS.map((a, i) => (
@@ -303,7 +306,7 @@ export function Achievements() {
 export function Certificates() {
   return (
     <section id="certificates" className="relative py-20 sm:py-28">
-      <div className="mx-auto max-w-6xl px-4">
+      <div className="mx-auto max-w-6xl px-5 sm:px-6">
         <SectionHeader eyebrow="Certificates" title="Credentials & learning" />
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {CERTIFICATES.map((c, i) => (
@@ -332,7 +335,7 @@ export function Certificates() {
 export function Services() {
   return (
     <section id="services" className="relative py-20 sm:py-28">
-      <div className="mx-auto max-w-6xl px-4">
+      <div className="mx-auto max-w-6xl px-5 sm:px-6">
         <SectionHeader eyebrow="Services" title="How I can help" />
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((s, i) => (
@@ -362,7 +365,7 @@ export function Contact() {
 
   return (
     <section id="contact" className="relative py-20 sm:py-28">
-      <div className="mx-auto max-w-6xl px-4">
+      <div className="mx-auto max-w-6xl px-5 sm:px-6">
         <SectionHeader eyebrow="Contact" title="Let's build something together" description="Reach out for internships, collaborations or a quick hello." />
         <div className="grid gap-6 lg:grid-cols-5">
           <Reveal className="lg:col-span-2">
