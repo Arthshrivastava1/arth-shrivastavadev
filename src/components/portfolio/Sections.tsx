@@ -244,40 +244,50 @@ function ProjectCard({ project, index, delay }: { project: typeof PROJECTS[numbe
 
   return (
     <Reveal delay={delay}>
-      <div
+      <article
         ref={ref}
         onMouseMove={onMove}
         onMouseLeave={onLeave}
-        className="glass group relative flex h-full flex-col overflow-hidden rounded-3xl p-6 transition-transform duration-300"
+        className="glass group relative flex h-full flex-col overflow-hidden rounded-3xl p-6 transition-transform duration-300 will-change-transform"
       >
-        <div className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${project.hue} opacity-30 transition-opacity group-hover:opacity-60`} />
-        <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-primary/30 blur-3xl opacity-0 transition-opacity group-hover:opacity-100" />
+        <div aria-hidden className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${project.hue} opacity-20 transition-opacity duration-500 group-hover:opacity-60`} />
+        <div aria-hidden className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-primary/30 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
         <div className="relative flex flex-1 flex-col">
-          <div className="flex flex-wrap gap-1.5">
+          <div className="flex items-center justify-between">
+            <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+              {String(index + 1).padStart(2, "0")} / {String(PROJECTS.length).padStart(2, "0")}
+            </span>
+            <ExternalLink className="h-4 w-4 text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white" aria-hidden />
+          </div>
+
+          <h3 className="mt-4 font-display text-xl font-semibold tracking-tight">{project.title}</h3>
+          <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{project.desc}</p>
+
+          <div className="mt-5 flex flex-wrap gap-1.5">
             {project.tags.map((t) => (
-              <span key={t} className="rounded-full border border-white/10 bg-black/30 px-2 py-0.5 text-[10px] uppercase tracking-widest text-muted-foreground">{t}</span>
+              <span key={t} className="rounded-full border border-white/10 bg-black/20 px-2 py-0.5 text-[10px] uppercase tracking-widest text-muted-foreground">{t}</span>
             ))}
           </div>
-          <h3 className="mt-4 font-display text-xl font-semibold">{project.title}</h3>
-          <p className="mt-2 flex-1 text-sm text-muted-foreground">{project.desc}</p>
-          <div className="mt-5 flex flex-wrap gap-2">
+
+          <div className="mt-5 flex flex-wrap gap-2 border-t border-white/5 pt-5">
             {project.links.map((l) => (
               <a
                 key={l.label}
                 href={l.href}
-                className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-white hover:border-primary/50 hover:bg-white/10"
+                aria-label={`${project.title} — ${l.label}`}
+                className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-white transition-colors hover:border-primary/50 hover:bg-white/10"
               >
-                <l.icon className="h-3.5 w-3.5" /> {l.label}
-                <ExternalLink className="h-3 w-3 opacity-60" />
+                <l.icon className="h-3.5 w-3.5" aria-hidden /> {l.label}
               </a>
             ))}
           </div>
         </div>
-      </div>
+      </article>
     </Reveal>
   );
 }
+
 
 /* -------- ACHIEVEMENTS -------- */
 export function Achievements() {
