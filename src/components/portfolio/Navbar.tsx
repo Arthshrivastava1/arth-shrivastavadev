@@ -34,15 +34,16 @@ export function Navbar() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed inset-x-0 top-0 z-50 transition-all ${scrolled ? "py-2" : "py-4"}`}
     >
-      <div className="mx-auto max-w-7xl px-4">
-        <div className={`flex items-center justify-between rounded-2xl px-4 py-3 transition-all ${scrolled ? "glass-strong shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)]" : "glass"}`}>
-          <a href="#home" className="group flex items-center gap-2">
+      <div className="mx-auto max-w-7xl px-3 sm:px-4">
+        <div className={`flex items-center justify-between rounded-2xl px-3 py-2.5 transition-all sm:px-4 sm:py-3 ${scrolled ? "glass-strong shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)]" : "glass"}`}>
+          <a href="#home" aria-label="Home" className="group flex items-center gap-2">
             <span className="relative flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl">
-              <span className="absolute inset-0 gradient-brand" />
+              <span aria-hidden className="absolute inset-0 gradient-brand" />
               <span className="relative font-display text-sm font-bold text-white">AS</span>
             </span>
             <span className="hidden font-display text-sm font-semibold tracking-wide sm:inline">Arth Shrivastava</span>
           </a>
+
 
           <nav className="hidden items-center gap-1 lg:flex">
             {NAV_LINKS.map((l) => (
