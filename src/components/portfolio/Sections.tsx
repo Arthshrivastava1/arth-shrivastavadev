@@ -12,7 +12,7 @@ import {
 /* -------- ABOUT -------- */
 export function About() {
   return (
-    <section id="about" className="relative py-24">
+    <section id="about" className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeader eyebrow="About Me" title="Engineer. Builder. Learner." />
         <div className="grid gap-8 lg:grid-cols-3">
@@ -106,7 +106,7 @@ function StatCard({ value, suffix, label, delay }: { value: number; suffix: stri
 /* -------- SKILLS -------- */
 export function Skills() {
   return (
-    <section id="skills" className="relative py-24">
+    <section id="skills" className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeader eyebrow="Skills" title="Tools of the trade" description="A modern stack across AI, testing, security and the web." />
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -139,7 +139,7 @@ export function Skills() {
 /* -------- TIMELINE -------- */
 export function Timeline() {
   return (
-    <section id="timeline" className="relative py-24">
+    <section id="timeline" className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-4xl px-4">
         <SectionHeader eyebrow="Journey" title="A timeline of growth" />
         <div className="relative">
@@ -167,7 +167,7 @@ export function Timeline() {
 /* -------- EXPERIENCE -------- */
 export function Experience() {
   return (
-    <section id="experience" className="relative py-24">
+    <section id="experience" className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeader eyebrow="Experience" title="Where I've contributed" />
         <div className="grid gap-6 md:grid-cols-2">
@@ -205,7 +205,7 @@ export function Projects() {
   const visible = PROJECTS.filter((p) => filter === "All" || p.tags.includes(filter));
 
   return (
-    <section id="projects" className="relative py-24">
+    <section id="projects" className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeader eyebrow="Projects" title="Selected work" description="A snapshot of things I've built and shipped." />
         <div className="mb-8 flex flex-wrap justify-center gap-2">
@@ -279,7 +279,7 @@ function ProjectCard({ project, delay }: { project: typeof PROJECTS[number]; del
 /* -------- ACHIEVEMENTS -------- */
 export function Achievements() {
   return (
-    <section id="achievements" className="relative py-24">
+    <section id="achievements" className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-5xl px-4">
         <SectionHeader eyebrow="Achievements" title="Milestones & recognition" />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -302,7 +302,7 @@ export function Achievements() {
 /* -------- CERTIFICATES -------- */
 export function Certificates() {
   return (
-    <section id="certificates" className="relative py-24">
+    <section id="certificates" className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeader eyebrow="Certificates" title="Credentials & learning" />
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -331,7 +331,7 @@ export function Certificates() {
 /* -------- SERVICES -------- */
 export function Services() {
   return (
-    <section id="services" className="relative py-24">
+    <section id="services" className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeader eyebrow="Services" title="How I can help" />
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -361,7 +361,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-24">
+    <section id="contact" className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeader eyebrow="Contact" title="Let's build something together" description="Reach out for internships, collaborations or a quick hello." />
         <div className="grid gap-6 lg:grid-cols-5">
