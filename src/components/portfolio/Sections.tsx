@@ -19,7 +19,7 @@ export function About() {
           <Reveal className="lg:col-span-2">
             <div className="glass-strong rounded-3xl p-8">
               <p className="text-lg leading-relaxed text-muted-foreground">
-                I'm <span className="text-white font-medium">Arth Shrivastava</span>, a final-year B.Tech Information Technology student passionate about
+                I'm <span className="text-white font-medium">Arth Shrivastava</span>, a B.Tech Information Technology Graduate passionate about
                 <span className="text-white"> AI, Software Testing, Deep Learning, Automation,</span> and
                 <span className="text-white"> Cybersecurity</span>.
               </p>
@@ -43,7 +43,7 @@ export function About() {
                 <Detail label="Role" value="LLM Generalist Intern @ Ethara AI" />
                 <Detail label="Focus" value="AI · Testing · Cybersecurity" />
                 <Detail label="Location" value="India" />
-                <Detail label="Graduation" value="2026" />
+                <Detail label="Status" value="Graduate · Open to Work" />
               </div>
             </div>
           </Reveal>
@@ -376,7 +376,7 @@ export function Contact() {
   return (
     <section id="contact" className="relative py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-5 sm:px-6">
-        <SectionHeader eyebrow="Contact" title="Let's build something together" description="Reach out for internships, collaborations or a quick hello." />
+        <SectionHeader eyebrow="Contact" title="Let's build something together" description="Reach out for full-time opportunities, collaborations or a quick hello." />
         <div className="grid gap-6 lg:grid-cols-5">
           <Reveal className="lg:col-span-2">
             <div className="glass-strong h-full rounded-3xl p-7">

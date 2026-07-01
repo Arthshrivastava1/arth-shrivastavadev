@@ -26,7 +26,7 @@ export const STATS = [
   { value: 3, suffix: "+", label: "Major Projects" },
   { value: 2, suffix: "+", label: "Professional Experiences" },
   { value: 10, suffix: "+", label: "Technologies" },
-  { value: 2026, suffix: "", label: "Graduation" },
+  { value: 2026, suffix: "", label: "Graduated" },
 ];
 
 export const SKILL_GROUPS = [
