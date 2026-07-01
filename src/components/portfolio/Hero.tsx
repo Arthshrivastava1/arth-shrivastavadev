@@ -160,7 +160,7 @@ export function Hero() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
             </span>
-            Available for internships
+            Available for Full-Time Opportunities
           </div>
 
           <p className="mt-6 text-sm font-medium text-muted-foreground sm:text-base">Hi, I'm</p>
@@ -174,8 +174,8 @@ export function Hero() {
           </p>
 
           <p className="mx-auto mt-6 max-w-xl text-[15px] leading-relaxed text-muted-foreground lg:mx-0">
-            Final-year B.Tech Information Technology student building intelligent software —
-            from deep learning systems to validation tooling and secure engineering practice.
+            B.Tech Information Technology Graduate building intelligent software —
+            from deep learning systems to validation tooling and secure engineering practice. Open to Work.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
