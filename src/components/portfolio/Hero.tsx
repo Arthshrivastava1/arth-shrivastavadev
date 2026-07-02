@@ -116,8 +116,8 @@ export function Hero() {
 
             <div className="group absolute inset-4 overflow-hidden rounded-full ring-1 ring-white/15 shadow-[0_30px_80px_-20px_rgba(59,130,246,0.5)] transition-shadow duration-500 hover:shadow-[0_30px_100px_-10px_rgba(139,92,246,0.7)]">
               <img
-                src={profileAsset.url}
-                alt="Portrait of Arth Shrivastava"
+                src="/arth-profile.jpeg"
+                alt="Arth Shrivastava"
                 loading="eager"
                 fetchPriority="high"
                 decoding="async"
