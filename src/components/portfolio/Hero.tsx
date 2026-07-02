@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Download, Mail, Github, Linkedin, ArrowDown } from "lucide-react";
-import profileAsset from "@/assets/arth-profile.jpeg.asset.json";
+const profileAsset = { url: "/arth-profile.jpeg" };
 import { ROLES, CONTACT } from "./data";
 
 function Particles() {
